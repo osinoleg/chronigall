@@ -71,7 +71,7 @@ write_to_timelog() {
     if [[ $desc != 'discard' ]]; then
         echo "" >> $timelog_file
         #echo "#"$(aenow) >> $timelog_file
-        echo "#"$(gdate --rfc-3339=seconds) >> $timelog_file
+        echo "#"$(date +%F' '%T%z) >> $timelog_file
         if [[ -z "${desc// }" ]]; then
             echo $(hms $work_duration) >> $timelog_file
         else
